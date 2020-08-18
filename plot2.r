@@ -10,11 +10,11 @@ data1$Datetime <- as.POSIXct(datetime)
 
 ## Creates line graph of second element's effect on first element,
 ## Adds appropriate labels
+dev.copy(png, file="plot2.png", height=480, width=480)
+
 with(data1, {
   plot(Global_active_power~Datetime, type="l",
        ylab="Global Active Power (kilowatts)", xlab="")
 })
 
-
-dev.copy(png, file="plot2.png", height=480, width=480)
 dev.off()

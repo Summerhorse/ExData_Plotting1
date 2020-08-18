@@ -6,6 +6,8 @@ datetime <- paste(as.Date(data1$Date), data1$Time)
 data1$Datetime <- as.POSIXct(datetime)
 
 ## Creates overlayed line graphs of second element's effect on first element,
+dev.copy(png, file="plot3.png", height=480, width=480)
+
 with(data1, {
   plot(Sub_metering_1~Datetime, type="l",
        ylab="Energy sub metering", xlab="", lwd = 2)
@@ -21,5 +23,5 @@ with(data1, {
 legend("topright", col = c("black", "red", "blue"), lty = 1, lwd = 2, legend = (c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")))
 
 
-dev.copy(png, file="plot3.png", height=480, width=480)
+
 dev.off()

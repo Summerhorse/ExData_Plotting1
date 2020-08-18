@@ -7,8 +7,8 @@ data1$Date <- as.Date(data1$Date, format="%d/%m/%Y")
 
 ## Draws a histogram of required data,
 ## Uses color and labels axis and chart appropriately
+dev.copy(png, file="plot1.png", height=480, width=480)
+
 hist(data1$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)", ylab = "Frequency")
 
-
-dev.copy(png, file="plot1.png", height=480, width=480)
 dev.off()
